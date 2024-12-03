@@ -18,14 +18,45 @@ This script creates Anki flashcard decks for language learning using sentences a
 
 ## Installation
 
-1. Install the required Python packages:
+1. Clone or download this repository:
+```bash
+git clone [repository-url]
+cd [repository-directory]
+```
+
+2. Create and activate a virtual environment:
+
+On Windows:
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+venv\Scripts\activate
+```
+
+On macOS/Linux:
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+```
+
+3. Install the required Python packages:
 ```bash
 pip install -r requirements.txt
 ```
 
+4. When you're done using the script, you can deactivate the virtual environment:
+```bash
+deactivate
+```
+
 ## Usage
 
-Run the script with the following command:
+Make sure your virtual environment is activated, then run:
 
 ```bash
 python tatoeba_to_anki.py -t TARGET_LANG -b BASE_LANG
@@ -57,6 +88,7 @@ The script creates an 'output' directory containing:
 2. An 'audio' subdirectory with MP3 files for all sentences
 
 ## Importing to Anki
+
 
 1. Import the generated CSV file:
    - Go to File → Import
@@ -92,3 +124,12 @@ For a complete list of language codes, visit [ISO 639-3 codes](https://iso639-3.
   - Audio files for all sentences in the target language
 - The script creates cards only for sentences that have audio recordings
 - The quality of the deck depends on available translations between your chosen language pair
+- Always activate the virtual environment before running the script
+- If you need to rerun the script later, just activate the virtual environment again - no need to reinstall dependencies
+
+## Troubleshooting
+
+If you get any dependency-related errors:
+1. Make sure your virtual environment is activated (you should see `(venv)` in your terminal)
+2. Try updating pip: `pip install --upgrade pip`
+3. Reinstall dependencies: `pip install -r requirements.txt`
